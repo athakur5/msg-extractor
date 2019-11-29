@@ -25,7 +25,7 @@ class Message(olefile.OleFileIO):
     Parser for Microsoft Outlook message files.
     """
 
-    def __init__(self, path, prefix='', attachmentClass=Attachment, filename=None):
+    def __init__(self, path, prefix='', attachmentClass=Attachment, filename=None, encoding = None):
         """
         :param path: path to the msg file in the system or is the raw msg file.
         :param prefix: used for extracting embeded msg files
@@ -40,6 +40,7 @@ class Message(olefile.OleFileIO):
         # WARNING DO NOT MANUALLY MODIFY PREFIX. Let the program set it.
         self.__path = path
         self.__attachmentClass = attachmentClass
+        self.__stringEncoding = encoding
 
         try:
             olefile.OleFileIO.__init__(self, path)
