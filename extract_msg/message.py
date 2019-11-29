@@ -40,7 +40,7 @@ class Message(olefile.OleFileIO):
         # WARNING DO NOT MANUALLY MODIFY PREFIX. Let the program set it.
         self.__path = path
         self.__attachmentClass = attachmentClass
-        self.__stringEncoding = encoding
+        # self.__stringEncoding = encoding
 
         try:
             olefile.OleFileIO.__init__(self, path)
