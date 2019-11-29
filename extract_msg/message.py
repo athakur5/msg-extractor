@@ -296,6 +296,10 @@ class Message(olefile.OleFileIO):
                 self.__stringEncoding = str(enc)
                 return self.__stringEncoding
 
+    @stringEncoding.setter
+    def stringEncoding(self, enc):
+        self.__stringEncoding = enc
+
     @property
     def areStringsUnicode(self):
         """
